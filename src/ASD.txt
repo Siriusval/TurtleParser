@@ -1,0 +1,39 @@
+https://www-sop.inria.fr/croap/centaur/tutorial/main/subsubsection3_6_1_1.html
+
+ASD Turtle
+
+Q1.
+(type := variant)
+
+
+document := Document(statement+)
+
+statement  := Subject(sId,predicate+)
+sId := Ident(string)
+
+predicate := Predicate(pId, object+)
+pId := Ident(string)
+
+object  := Text(string)
+         | Entity(string)
+
+Q2.1 Cf. java
+
+Q2.2.
+document := Document(statement+)
+            {document.toNTriple := statement+.toString
+
+statement  := Subject(sId,predicate+)
+            { statement.toString := foreach predicate.object, print statement.name + predicate.name + object.name
+sId := Ident(string)
+     { pId.name = string
+
+predicate := Predicate(pId, object+)
+            { predicate.name = predicate.pID.name
+pId := Ident(string)
+        { pId.name = string
+
+object  := Text(string)
+           { text.name = string
+         | Entity(string)
+         { entity.name = string
